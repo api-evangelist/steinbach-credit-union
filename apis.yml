@@ -1,0 +1,54 @@
+aid: steinbach-credit-union
+url: https://raw.githubusercontent.com/api-evangelist/steinbach-credit-union/refs/heads/main/apis.yml
+name: Steinbach Credit Union
+kind: company
+description: >-
+  Steinbach Credit Union (SCU) is a member-owned financial cooperative founded
+  in 1941 and headquartered in Steinbach, Manitoba, Canada, operating three
+  branches (Steinbach plus Linden Ridge and Lagimodiere in Winnipeg). With more
+  than CA$10 billion in assets and over 115,000 consumer, business, and
+  agricultural members, SCU is the largest credit union in Manitoba and among
+  the ten largest in Canada. As a provincially chartered co-operative it is
+  regulated in Manitoba with deposits guaranteed by the Manitoba Deposit
+  Guarantee Corporation. SCU offers personal and business banking, mortgages,
+  wealth management, and insurance, and delivers digital banking through an
+  online portal (online.scu.mb.ca) and a mobile app built on the Celero core
+  banking platform. Like nearly all Canadian credit unions, SCU exposes NO
+  public first-party developer API or portal: Canada's federal Consumer-Driven
+  Banking framework (Budget 2024 / Fall Economic Statement 2024, overseen by the
+  Financial Consumer Agency of Canada) is legislated but not yet operational, so
+  open finance remains voluntary. Consumer-permissioned data access to SCU
+  accounts today is aggregator-mediated (e.g. Flinks, the National Bank-owned
+  Canadian aggregator, and Plaid), and interbank money movement runs on the
+  shared Canadian rails via Interac e-Transfer.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Canada
+- Credit Union
+- Cooperative
+- Manitoba
+- Interac
+- Data Aggregation
+- Open Banking
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://scu.mb.ca/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/steinbach-credit-union
+- type: PrivacyPolicy
+  url: https://scu.mb.ca/privacy
+- type: TermsOfService
+  url: https://scu.mb.ca/legal
+- type: Support
+  url: https://scu.mb.ca/contact-us
+- type: Documentation
+  url: https://scu.mb.ca/ways-to-bank/interac-e-transfer
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

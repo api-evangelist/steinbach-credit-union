@@ -1,0 +1,102 @@
+aid: steinbach-credit-union
+name: Steinbach Credit Union
+review:
+  question: Does Steinbach Credit Union expose a public first-party developer API or portal?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Steinbach Credit Union (SCU) publishes NO public first-party developer API
+    and operates NO developer portal. Probes on 2026-07-23 of
+    https://developer.scu.mb.ca and https://api.scu.mb.ca did not resolve (no
+    DNS / connection, curl code 000), and https://scu.mb.ca/.well-known/apis.json
+    returned HTTP 404. No OpenAPI, Swagger, or other machine-readable API
+    definition is publicly downloadable, so none was harvested into openapi/.
+
+    This is the honest and typical posture for a Canadian credit union. Canada's
+    federal Consumer-Driven Banking (CDB) framework — legislated via Budget 2024
+    and the Fall Economic Statement 2024, with the Financial Consumer Agency of
+    Canada (FCAC) as overseer — is NOT yet operational, so open finance in
+    Canada remains voluntary and fragmented. SCU publishes no CDB participation
+    statement and no FDX alignment, and there is no US 1033-style obligation
+    applicable to a Manitoba provincial credit union.
+
+    SCU's consumer digital banking (the online.scu.mb.ca portal and its mobile
+    app, whose Google Play package is com.celero.steinbach) is delivered on the
+    Celero core banking platform; any integration surface therefore sits with
+    the banking-technology provider, not as a first-party SCU API. Third-party,
+    consumer-permissioned access to SCU accounts today is aggregator-mediated
+    (credential-based / screen-scraping) via Canadian and North American
+    aggregators such as Flinks (National Bank-owned) and Plaid. Interbank money
+    movement uses the shared Canadian rails through Interac e-Transfer, which SCU
+    documents as a consumer feature only, with no exposed API.
+  charter: Provincially chartered member-owned financial cooperative (credit union), Manitoba; deposits guaranteed by the Manitoba Deposit Guarantee Corporation.
+  developerPortal:
+    exists: false
+    probed:
+      - url: https://developer.scu.mb.ca
+        status: '000'
+        note: Does not resolve (no DNS / connection).
+      - url: https://api.scu.mb.ca
+        status: '000'
+        note: Does not resolve (no DNS / connection).
+      - url: https://scu.mb.ca/.well-known/apis.json
+        status: '404'
+        note: No APIs.json discovery document.
+      - url: https://scu.mb.ca/
+        status: '200'
+        note: Public marketing/banking site; no developer or API section.
+      - url: https://online.scu.mb.ca
+        status: '200'
+        note: Member online banking login (Celero-hosted); not a developer surface.
+  specProvenance: none
+  openapiHarvested: false
+  fdxParticipant: false
+  regulatoryPosture: >-
+    No US 1033 obligation (Canadian provincial credit union). Canada's
+    Consumer-Driven Banking framework is legislated (Budget 2024 / FES 2024,
+    FCAC-overseen) but not yet operational; SCU publishes no CDB/FDX position.
+  authModel: >-
+    No public API auth model documented (no OAuth2/OIDC, API-key, or mTLS
+    developer program). Member access is username/password login to the
+    Celero-hosted online and mobile banking apps.
+  dataAccess: aggregator-only
+  coreBankingProvider: Celero (per mobile app package com.celero.steinbach)
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No public REST API is documented.
+    - protocol: Aggregator
+      scheme: https
+      documented: external
+      note: >-
+        Consumer-permissioned data access via third-party aggregators (Flinks,
+        Plaid) rather than a first-party SCU API. Not an SCU-published interface.
+    - protocol: Interac e-Transfer
+      scheme: https
+      documented: consumer
+      note: >-
+        Interac e-Transfer offered as an in-app/online consumer feature; the
+        Interac network APIs are Interac's, not exposed by SCU.
+sources:
+  - url: https://scu.mb.ca/
+    type: Website
+    note: Corporate/banking site; personal, business, wealth, and digital banking. No developer/API section.
+  - url: https://en.wikipedia.org/wiki/Steinbach_Credit_Union
+    type: Reference
+    note: Founded 1941; Steinbach, Manitoba; ~CA$10.3B assets (2024); 115,000+ members; largest MB credit union, top 10 in Canada.
+  - url: https://play.google.com/store/apps/details?id=com.celero.steinbach
+    type: MobileApp
+    note: SCU Mobile app package com.celero.steinbach indicates the Celero core banking platform.
+  - url: https://scu.mb.ca/ways-to-bank/interac-e-transfer
+    type: Documentation
+    note: Interac e-Transfer offered as a consumer feature; no API documented.
+actions:
+  openapiPath: none
+  apisYmlUpdated: true
+  reason: |
+    Identity-only bootstrap. No public API surface exists to model, so apis[]
+    is empty and the record is honest about aggregator-only access under
+    Canada's not-yet-operational Consumer-Driven Banking framework.
