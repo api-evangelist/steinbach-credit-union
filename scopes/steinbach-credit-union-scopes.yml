@@ -1,0 +1,30 @@
+generated: '2026-07-23'
+method: searched
+source: https://online.scu.mb.ca/.well-known/openid-configuration
+docs: https://online.scu.mb.ca/am/oauth2
+scope_note: >-
+  Scopes advertised by the ForgeRock/Ping AM OAuth2 server behind SCU's
+  members-only digital banking (issuer https://online.scu.mb.ca/am/oauth2).
+  These are the standard OIDC scopes plus the AM platform's identity-management
+  scopes; they are NOT a public developer-API permission surface. Captured from
+  scopes_supported in the anonymously published OIDC discovery document.
+schemes:
+- name: oauth2
+  source: well-known/steinbach-credit-union-openid-configuration.json
+  authorizationUrl: https://online.scu.mb.ca/am/oauth2/authorize
+  tokenUrl: https://online.scu.mb.ca/am/oauth2/steinbach_token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; returns an ID token.
+- scope: profile
+  description: Standard OIDC profile claims for the authenticated member.
+- scope: email
+  description: Member email-address claim.
+- scope: address
+  description: Member postal-address claim.
+- scope: phone
+  description: Member phone-number claim.
+- scope: 'fr:idm:*'
+  description: ForgeRock Identity Management resource access (AM/IDM platform scope).
+- scope: am-introspect-all-tokens
+  description: ForgeRock AM administrative scope permitting introspection of all tokens.

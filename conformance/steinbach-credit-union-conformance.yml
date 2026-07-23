@@ -1,0 +1,55 @@
+generated: '2026-07-23'
+method: searched
+source: https://online.scu.mb.ca/.well-known/openid-configuration
+scope_note: >-
+  Conformance asserted from the capabilities advertised by SCU's members-only
+  digital-banking OAuth2/OIDC authorization server (ForgeRock/Ping AM, issuer
+  https://online.scu.mb.ca/am/oauth2). Evidence is the anonymously published OIDC
+  discovery document. These concern the consumer identity surface only; SCU has
+  no public developer REST/GraphQL API, so REST-style standards (JSON:API,
+  RFC 9457, OData, FHIR, SCIM) are not applicable.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: authorization/token/introspection/revocation endpoints advertised in OIDC discovery
+- id: oidc
+  conforms: true
+  evidence: openid-configuration discovery doc with issuer, userinfo_endpoint, id_token signing algs
+- id: rfc8414-oauth-server-metadata
+  conforms: true
+  evidence: server metadata served at /.well-known/openid-configuration
+- id: rfc7636-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256 and plain
+- id: rfc9126-pushed-authorization-requests
+  conforms: true
+  evidence: pushed_authorization_request_endpoint /am/oauth2/par advertised
+- id: rfc7662-token-introspection
+  conforms: true
+  evidence: introspection_endpoint /am/oauth2/introspect advertised
+- id: rfc7009-token-revocation
+  conforms: true
+  evidence: revocation_endpoint /am/oauth2/token/revoke advertised
+- id: rfc8705-mtls-client-auth-and-cert-bound-tokens
+  conforms: true
+  evidence: tls_client_auth + self_signed_tls_client_auth methods and certificate-bound tokens supported
+- id: rfc8628-device-authorization-grant
+  conforms: true
+  evidence: grant_types_supported includes urn:ietf:params:oauth:grant-type:device_code
+- id: openid-ciba
+  conforms: true
+  evidence: grant_types_supported includes urn:openid:params:grant-type:ciba
+- id: uma2
+  conforms: true
+  evidence: grant_types_supported includes urn:ietf:params:oauth:grant-type:uma-ticket
+- id: rfc7523-jwt-bearer
+  conforms: true
+  evidence: grant_types_supported includes urn:ietf:params:oauth:grant-type:jwt-bearer
+- id: jwks
+  conforms: true
+  evidence: jwks_uri /am/oauth2/connect/jwk_uri reachable (HTTP 200)
+- id: rfc9457-problem-details
+  conforms: false
+- id: fapi
+  conforms: false
+  note: mTLS-bound tokens and PAR are present (FAPI building blocks) but no FAPI profile is advertised

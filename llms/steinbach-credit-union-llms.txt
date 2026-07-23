@@ -1,0 +1,32 @@
+# Steinbach Credit Union
+
+> Steinbach Credit Union (SCU) is a member-owned financial cooperative founded in 1941 and headquartered in Steinbach, Manitoba, Canada. It is the largest credit union in Manitoba and among the ten largest in Canada, with more than CA$10 billion in assets and over 115,000 members across three branches. SCU offers personal and business banking, mortgages, wealth management, and insurance, with digital banking delivered on the Celero / ebankit platform.
+
+## API availability
+
+> SCU exposes NO public first-party developer API or developer portal. Canada's federal Consumer-Driven Banking (open banking) framework is legislated (Budget 2024) but not yet operational, so open finance remains voluntary. Consumer-permissioned access to SCU accounts today is aggregator-mediated (e.g. Flinks, Plaid); interbank money movement runs on shared Canadian rails via Interac e-Transfer. The only machine-readable surface SCU publishes is the OpenID Connect discovery document for its members-only digital-banking identity provider.
+
+## Identity (consumer digital banking, not a developer API)
+
+- OpenID Connect discovery: https://online.scu.mb.ca/.well-known/openid-configuration
+- OAuth2/OIDC issuer (ForgeRock/Ping AM): https://online.scu.mb.ca/am/oauth2
+- Digital banking sign-in: https://online.scu.mb.ca/
+
+## Company
+
+- Website: https://scu.mb.ca/
+- Contact / Support: https://scu.mb.ca/contact-us
+- Ways to bank (Interac e-Transfer): https://scu.mb.ca/ways-to-bank/interac-e-transfer
+- Privacy: https://scu.mb.ca/privacy
+- Online privacy & security: https://scu.mb.ca/privacy-and-security/online-privacy-and-security
+- Fraud Prevention Centre: https://scu.mb.ca/fraud-prevention-centre
+- Legal / Terms: https://scu.mb.ca/legal
+- LinkedIn: https://www.linkedin.com/company/steinbach-credit-union
+
+## Artifacts in this profile
+
+- Authentication profile: authentication/steinbach-credit-union-authentication.yml
+- OAuth scopes: scopes/steinbach-credit-union-scopes.yml
+- Conformance: conformance/steinbach-credit-union-conformance.yml
+- Well-known index: well-known/steinbach-credit-union-well-known.yml
+- Domain security: security/steinbach-credit-union-domain-security.yml

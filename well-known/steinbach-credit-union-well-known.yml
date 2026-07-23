@@ -1,0 +1,57 @@
+generated: '2026-07-23'
+method: searched
+source: live probes of /.well-known/* on scu.mb.ca and online.scu.mb.ca
+notes: >-
+  online.scu.mb.ca is SCU's members-only digital banking front end (Celero /
+  ebankit) fronted by a ForgeRock/Ping Access Management OAuth2 authorization
+  server (issuer https://online.scu.mb.ca/am/oauth2). Its OpenID Connect
+  discovery document is anonymously reachable and captured verbatim. All other
+  probed /.well-known/* paths on online.scu.mb.ca (security.txt, api-catalog,
+  oauth-authorization-server, openapi.json) returned the identical 11245-byte
+  digital-banking login HTML shell (a catch-all 200), NOT real documents, and
+  are recorded as effectively absent. scu.mb.ca (marketing site) publishes no
+  /.well-known/* surface. There is no public first-party developer API.
+hosts:
+- host: https://online.scu.mb.ca
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    real: true
+    file: steinbach-credit-union-openid-configuration.json
+    note: OpenID Connect discovery for the ForgeRock/Ping AM OAuth2 server (issuer /am/oauth2)
+  - path: /am/oauth2/.well-known/openid-configuration
+    status: 200
+    real: true
+    note: same OIDC discovery served at the issuer path; JWKS at /am/oauth2/connect/jwk_uri is reachable (200)
+  - path: /.well-known/security.txt
+    status: 200
+    real: false
+    note: returns the digital-banking login HTML shell (catch-all), not an RFC 9116 file
+  - path: /.well-known/api-catalog
+    status: 200
+    real: false
+    note: returns the login HTML shell (catch-all), not an RFC 9727 catalog
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real: false
+    note: root path returns the login shell; the issuer path /am/oauth2/.well-known/oauth-authorization-server is 404
+  - path: /openapi.json
+    status: 200
+    real: false
+    note: returns the login HTML shell, not an OpenAPI document
+- host: https://scu.mb.ca
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404

@@ -37,6 +37,20 @@ modified: '2026-07-23'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/steinbach-credit-union-domain-security.yml
+- type: Authentication
+  url: authentication/steinbach-credit-union-authentication.yml
+- type: OAuthScopes
+  url: scopes/steinbach-credit-union-scopes.yml
+- type: Conformance
+  url: conformance/steinbach-credit-union-conformance.yml
+- type: WellKnown
+  url: well-known/steinbach-credit-union-well-known.yml
+- type: LLMsTxt
+  url: llms/steinbach-credit-union-llms.txt
+- type: Login
+  url: https://online.scu.mb.ca/
 - type: Website
   url: https://scu.mb.ca/
 - type: LinkedIn
