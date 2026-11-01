@@ -1,4 +1,4 @@
-# Steinbach Credit Union (steinbach-credit-union)
+# Steinbach Credit Union
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,52 +64,90 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Steinbach Credit Union (SCU) is a member-owned financial cooperative founded in 1941 and headquartered in Steinbach, Manitoba, Canada. With more than CA$10 billion in assets and over 115,000 consumer, business, and agricultural members, SCU is the largest credit union in Manitoba and among the ten largest in Canada. It is a provincially chartered co-operative regulated in Manitoba, with deposits guaranteed by the Manitoba Deposit Guarantee Corporation.
+Steinbach Credit Union (SCU) is a member-owned financial cooperative founded in 1941 and headquartered in Steinbach, Manitoba, Canada, operating three branches (Steinbach plus Linden Ridge and Lagimodiere in Winnipeg). With more than CA$10 billion in assets and over 115,000 consumer, business, and agricultural members, SCU is the largest credit union in Manitoba and among the ten largest in Canada. As a provincially chartered co-operative it is regulated in Manitoba with deposits guaranteed by the Manitoba Deposit Guarantee Corporation. SCU offers personal and business banking, mortgages, wealth management, and insurance, and delivers digital banking through an online portal (online.scu.mb.ca) and a mobile app built on the Celero core banking platform. Like nearly all Canadian credit unions, SCU exposes NO public first-party developer API or portal: Canada's federal Consumer-Driven Banking framework (Budget 2024 / Fall Economic Statement 2024, overseen by the Financial Consumer Agency of Canada) is legislated but not yet operational, so open finance remains voluntary. Consumer-permissioned data access to SCU accounts today is aggregator-mediated (e.g. Flinks, the National Bank-owned Canadian aggregator, and Plaid), and interbank money movement runs on the shared Canadian rails via Interac e-Transfer.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/steinbach-credit-union/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/steinbach-credit-union/refs/heads/main/apis.yml)
+**Areas:** Financial Services · Banking · Canada · Credit Union · Cooperative · Manitoba · Interac · Open Banking
 
-## Tags
+## Steinbach Credit Union on APIs.io
 
-- Financial Services
-- Banking
-- Canada
-- Credit Union
-- Cooperative
-- Manitoba
-- Interac
-- Data Aggregation
-- Open Banking
+Everything profiled for Steinbach Credit Union is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/steinbach-credit-union/](https://apis.io/providers/steinbach-credit-union/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Open Finance & API Posture
+#### Security (2)
 
-Steinbach Credit Union exposes **no public first-party developer API or developer portal**. Probes of `developer.scu.mb.ca` and `api.scu.mb.ca` do not resolve, and no OpenAPI/Swagger definition is publicly downloadable.
+Authentication, trust centre, and vulnerability disclosure.
 
-This is the honest, common posture for a Canadian credit union:
+- [Steinbach Credit Union Authentication](https://apis.io/security/steinbach-credit-union/steinbach-credit-union-authentication/)
+- [Steinbach Credit Union Domain Security](https://apis.io/security/steinbach-credit-union/steinbach-credit-union-domain-security/)
 
-- **Consumer-Driven Banking (CDB):** Canada's federal open-banking / consumer-driven banking framework (Budget 2024 and the Fall Economic Statement 2024, overseen by the Financial Consumer Agency of Canada) is legislated but **not yet operational**. Open finance in Canada is therefore voluntary and fragmented, and SCU publishes no CDB or FDX participation statement.
-- **Core banking platform:** SCU's digital banking (online portal `online.scu.mb.ca` and its mobile app) runs on the **Celero** core banking platform — the credit-union technology provider is where any integration surface would live, not a first-party SCU API.
-- **Aggregator access:** Consumer-permissioned access to SCU account data today is **aggregator-mediated** (screen-scraping / credential-based), primarily via **Flinks** (the National Bank-owned Canadian aggregator) and **Plaid**, rather than a first-party API.
-- **Canadian rails:** Interbank money movement uses the shared Canadian rails via **Interac e-Transfer**; SCU documents Interac e-Transfer as a consumer feature but does not expose an API around it.
+#### OAuth scopes (1)
 
-## APIs
+The permissions the API asks for.
 
-None. Steinbach Credit Union does not document a public API. See the posture notes above and `review.yml` for the full reviewer finding.
+- [Steinbach Credit Union Scopes](https://apis.io/scopes/steinbach-credit-union/steinbach-credit-union-scopes/)
 
-## Common Properties
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://scu.mb.ca/)
-- [LinkedIn](https://www.linkedin.com/company/steinbach-credit-union)
-- [Privacy Policy](https://scu.mb.ca/privacy)
-- [Terms of Service](https://scu.mb.ca/legal)
+- [Documentation](https://scu.mb.ca/ways-to-bank/interac-e-transfer)
 - [Support](https://scu.mb.ca/contact-us)
-- [Interac e-Transfer](https://scu.mb.ca/ways-to-bank/interac-e-transfer)
+- [Terms of service](https://scu.mb.ca/legal)
+- [Privacy policy](https://scu.mb.ca/privacy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 21.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 27.6 |
+
+**Agent readiness 15.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 37.8** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/steinbach-credit-union/](https://apis.io/providers/steinbach-credit-union/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Steinbach Credit Union: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/steinbach-credit-union/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
